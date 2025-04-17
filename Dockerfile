@@ -1,9 +1,6 @@
-FROM ubuntu
+FROM nginx:alpine
 
-RUN apt update && apt install apache2 -y
-
-COPY . /var/www/html
+COPY . /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD ["service","apache2","start"]
